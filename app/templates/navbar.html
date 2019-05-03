@@ -1,0 +1,76 @@
+<header>
+    <div class="navbar navbar-inverse" role="navigation"style="background-color:#1A5276;font-family: 'Chewy', cursive; font-size:25px">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle = "collapse" data-target = ".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                  <a class="navbar-brand" href="/" style="font-family: 'Bungee', cursive; font-size:50px"> OkoaTenant </a>
+      
+          </div>
+      
+        </div>
+        
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right" id="mySidenav">
+            {% if current_user.is_authenticated %}
+            <li style="font-size:20px;color:white" id="home"><a href="/">HOME</a></li>
+            <li id="profile"><a href="{{url_for('main.profile',uname=current_user.username)}}">PROFILE</a></li>
+            <li id="sign-out"><a href="{{url_for('auth.logout')}}">SIGN OUT</a></li>
+            {% else %}
+            <li style="font-size:20px;color:white" id="home"><a href="/">HOME</a></li>
+            <li id="sign-in"><a href="{{url_for('auth.login')}}">SIGN IN</a></li>
+            {%endif%}
+            <li id="about"><a href="{{url_for('auth.login')}}">ABOUT</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    
+      <header>
+          <div class="navbar navbar-inverse" role="navigation">
+              <div class="container-fluid">
+                  <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand" href="/"> Blog </a>
+                  </div>
+                  <div class="navbar-collapse collapse">
+                      <ul class="nav navbar-nav">
+       
+                          <li><a href="/theblog">Create Blog</a></li>
+                          <li><a href="/allblog">Read Blogs</a></li>
+       
+                      </ul>
+                      <ul class="nav navbar-nav navbar-right">
+                          <li>
+                              <a href="/">Profile Page</a>
+                          </li>
+                          {% if current_user.is_authenticated %}
+                          <li style="color:white;">
+                              <a href="">
+                                  {{current_user.username}}
+                              </a>
+                          </li>
+                          <li>
+                              <a href="{{url_for('auth.logout')}}">
+                                  Sign out
+                              </a>
+                          </li>
+                          {% else %}
+                          <li>
+                              <a href="{{url_for('auth.login')}}">Sign in</a>
+                          </li>
+                          {%endif%}
+                      </ul>
+                  </div>
+              </div>
+          </div>
+       </header>
