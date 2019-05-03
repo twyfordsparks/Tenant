@@ -1,0 +1,34 @@
+{% macro displayCategoryList(category_list) %}
+{% for category in category_list%}
+  <a href="/category/{{category.id}}">
+    <div class="container" id="items">
+      <p>{{category.name|upper}}</p>
+    </div>
+  </a>
+  {% endfor %}
+{% endmacro %}
+
+{% macro displayTenants(tenant_list) %}
+  {% for tenants in tenant_list %}
+  <div class="col-md-6">
+    <div class="well">
+      <div class="row">
+        <div class="col-md-6">
+            <h3>{{tenants.actual_tenant}}</h3>
+        </div>
+        <div class="col-md-6">
+          <p>POSTED: {{tenants.date_posted.strftime('%Y/%m/%d || %r')}}</p>
+          <a href="/tenant/{{tenants.id}}"><h4>COMMENT</h4></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+{% endmacro %}
+
+{% macro displaySpecificTenant(specific_tenant_list) %}
+ {% for comment in specific_tenant_list %}
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left">
+  <hr> {{comment.comment_id}}
+</div>
+{% endfor %}{% endmacro %}
