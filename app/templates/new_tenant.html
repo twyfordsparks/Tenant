@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+ {%block styles%}
+  {{ super() }}
+
+{%endblock%}
+
+{% block content %}
+<div class="container" style="text-align:center">
+  <h3>{{category.name|upper}} OkoaTenant</h3>
+  <div class="well">
+    <hr>
+    {{wtf.quick_form(tenant_form)}}
+ </div>
+</div>
+{% endblock %}
