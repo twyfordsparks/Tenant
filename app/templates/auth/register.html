@@ -2,5 +2,14 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block content %}
+<div class="container">
+    <center>
+        <div class="row">
 
+            <div class="column"></div>
+            <div class="column">{{wtf.quick_form(registration_form)}}</div>
+        </div>
+    </center>
+
+</div>
 {% endblock%}
