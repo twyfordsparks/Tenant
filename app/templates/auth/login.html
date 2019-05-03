@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+{% import 'bootstrap/wtf.html' as wtf%}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="column">
+        </div>
+        <center>
+            <div class="column">
+
+                <div class="col-md-8">
+                    {% for message in get_flashed_messages() %}
+                    <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                    <!-- Login form -->
+                    {{wtf.quick_form(login_form)}}
+                    <button class="btn btn-info" type="button"><a href="{{url_for('auth.register')}}">Sign up
+                            here</a></button>
+                </div>
+            </div>
+        </center>
+    </div <div class="row">
+</div>
+</div>
+<style>
+    body {
+        background-image: url(https://assets.onesha.co.ke/images/uploads/project-images/onesha_11bf5724f6f338169d0f4ae2a5aaadb3.jpg);
+    }
+
+    .square {
+
+        height: 500px;
+        width: 500px;
+        background-color: #555;
+    }
+
+    .column {
+        float: left;
+        width: 50%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+
+{% endblock%}
