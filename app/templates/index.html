@@ -11,6 +11,45 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet">
 <style>
     @import url('https://fonts.googleapis.com/css?family=Bungee|Chewy|Roboto+Mono');
+    #sidebar{
+        width: 250px;
+        height:100%;
+        background-color:#7DCEA0;
+        position:fixed;
+        overflow:auto;
+        font-family: 'Bungee', cursive;
+        /*font-family: 'Roboto Mono', monospace;
+        font-family: 'Chewy', cursive;*/
+      }
+      #sidebar p{
+        margin-left: 20px;
+        font-size: 25px;
+      }
+      #items{
+        margin:auto;
+        font-family: 'Chewy', cursive;
+      }
+      #items:hover{
+        background-color: white;
+      }
+      a:link{
+        text-decoration: none;
+      }
+      .col{
+        height:250px;
+        width: 250px;
+      }
+      img{
+        width:100%;
+        height:230px;
+      }
+      img:hover{
+        background-color: white;
+        transition: 0.5s;
+        opacity: 0.3;
+        cursor: pointer;
+      }
+
     *{
   padding:0;
   margin:0;
@@ -627,7 +666,6 @@ h5 {
                             </div>
                           </header>
                           <!--contact form start-->
-    
           <!--great info-->
         <div class="container">
             <div id="deal" class="row">
@@ -670,6 +708,7 @@ h5 {
         </div>
       </div>
     </div>
+
     
           <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <!-- Bootstrap tooltips -->

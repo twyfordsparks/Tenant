@@ -18,3 +18,8 @@ class TenantForm(FlaskForm):
 class CommentForm(FlaskForm):
     comment_id = TextAreaField('WRITE COMMENT')
     submit = SubmitField('SUBMIT')
+
+class PriceForm(FlaskForm):
+    # comment_id = TextAreaField('WRITE COMMENT')
+    # submit = SubmitField('SUBMIT')
+

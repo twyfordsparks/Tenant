@@ -132,6 +132,20 @@ def new_comment(id):
         new_comment.save_comment()
         return redirect(url_for('.category', id=tenants.category_id))
 
-    return render_template('comment.html', comment_form=form)    
+    return render_template('comment.html', comment_form=form)
 
+#route for house prices
+@main.route('/price/<int:id>', methods=['GET', 'POST'])
+@login_required
+def single_price(id):
+    '''
+    Function the returns a single price for comment to be added
+    '''
 
+    Price = Price.query.get(id)
+
+    if Price is None:
+        abort(404)
+
+    comment = Comments.get_comments(id)
+    return render_template('price.html', Price=Price)
